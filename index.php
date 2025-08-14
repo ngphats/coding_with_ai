@@ -143,6 +143,33 @@ function updateUser($pdo, $id, $firstName, $lastName, $email, $phone = null) {
     }
 }
 
+function deleteUser($pdo, $id) {
+    try {
+        // First check if user exists
+        $checkSql = "SELECT id, first_name, last_name FROM users WHERE id = ?";
+        $checkStmt = $pdo->prepare($checkSql);
+        $checkStmt->execute([$id]);
+        $user = $checkStmt->fetch(PDO::FETCH_ASSOC);
+        
+        if (!$user) {
+            return ['success' => false, 'error' => 'User không tồn tại'];
+        }
+        
+        // Delete the user
+        $sql = "DELETE FROM users WHERE id = ?";
+        $stmt = $pdo->prepare($sql);
+        $result = $stmt->execute([$id]);
+        
+        if ($result && $stmt->rowCount() > 0) {
+            return ['success' => true, 'message' => "User '{$user['first_name']} {$user['last_name']}' đã được xóa thành công!"];
+        } else {
+            return ['success' => false, 'error' => 'Failed to delete user'];
+        }
+    } catch (PDOException $e) {
+        return ['success' => false, 'error' => 'Database error: ' . $e->getMessage()];
+    }
+}
+
 // Request Routing
 $action = $_GET['action'] ?? 'list';
 $id = $_GET['id'] ?? null;
@@ -199,6 +226,21 @@ switch ($action) {
         }
         break;
     
+    case 'delete':
+        if (!$id || !is_numeric($id)) {
+            header('Location: index.php?error=' . urlencode('Invalid user ID'));
+            exit;
+        }
+        
+        $result = deleteUser($pdo, $id);
+        
+        if ($result['success']) {
+            header('Location: index.php?message=' . urlencode($result['message']));
+        } else {
+            header('Location: index.php?error=' . urlencode($result['error']));
+        }
+        exit;
+    
     case 'list':
     default:
         $users = getUsers($pdo);
@@ -224,6 +266,8 @@ switch ($action) {
             --error-color: #dc2626;
             --error-bg: #fef2f2;
             --error-border: #f87171;
+            --danger-color: #dc2626;
+            --danger-hover: #b91c1c;
             --warning-color: #d97706;
             --warning-bg: #fffbeb;
             --warning-border: #f59e0b;
@@ -334,6 +378,19 @@ switch ($action) {
             padding: 0.5rem 1rem;
             font-size: 0.75rem;
             border-radius: var(--border-radius-sm);
+        }
+
+        /* Danger Button */
+        .btn-danger {
+            background-color: var(--danger-color);
+            color: white;
+            border: 2px solid var(--danger-color);
+        }
+
+        .btn-danger:hover {
+            background-color: var(--danger-hover);
+            border-color: var(--danger-hover);
+            transform: translateY(-1px);
         }
 
         /* Table System */
@@ -705,6 +762,9 @@ switch ($action) {
                                 <td><?= htmlspecialchars(date('d/m/Y H:i', strtotime($user['created_at']))) ?></td>
                                 <td>
                                     <a href="index.php?action=edit&id=<?= $user['id'] ?>" class="btn btn-sm">Edit</a>
+                                    <a href="index.php?action=delete&id=<?= $user['id'] ?>" 
+                                       class="btn btn-sm btn-danger"
+                                       onclick="return confirm('Bạn có chắc chắn muốn xóa user \'<?= htmlspecialchars($user['first_name'] . ' ' . $user['last_name']) ?>\'? Hành động này không thể hoàn tác.')">Delete</a>
                                 </td>
                             </tr>
                             <?php endforeach; ?>

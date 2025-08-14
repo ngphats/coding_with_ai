@@ -2,6 +2,38 @@
 
 Tất cả các thay đổi quan trọng sẽ được ghi lại trong file này.
 
+## [v0.7.0] - 2025-08-14
+
+### Added
+- **Delete User Functionality**: Complete CRUD operations now available
+- **Delete Confirmation**: JavaScript confirm dialog before deletion
+- **Delete Button**: Red "Delete" button trong Actions column
+- **Success Messages**: Confirmation messages sau khi delete user
+- **Error Handling**: Comprehensive error handling cho delete operations
+- **User Validation**: Check if user exists before deletion
+- **CSS Danger Class**: New btn-danger styling for destructive actions
+
+### Features
+- ✅ **Complete CRUD**: Create, Read, Update, Delete operations
+- ✅ **Confirmation Dialog**: "Bạn có chắc chắn muốn xóa user..." prompt
+- ✅ **User-Friendly Messages**: Success/error feedback với user names
+- ✅ **Safe Deletion**: Validates user existence before deletion
+- ✅ **Professional UI**: Consistent red danger buttons for delete actions
+
+### Technical Implementation
+- **New Function**: `deleteUser($pdo, $id)` với proper error handling
+- **New Route**: `case 'delete'` trong routing system  
+- **New CSS**: `.btn-danger` class với red styling và hover effects
+- **New Variables**: `--danger-color` và `--danger-hover` CSS variables
+- **Database Safety**: DELETE query với prepared statements
+- **UI Enhancement**: Delete buttons positioned next to Edit buttons
+
+### Database Operations
+- **Query**: `DELETE FROM users WHERE id = ?` với PDO prepared statement
+- **Validation**: Check user existence trước khi delete
+- **Response**: Return success/error với user name trong message
+- **Security**: SQL injection prevention với parameterized queries
+
 ## [v0.6.1] - 2025-08-14
 
 ### Changed
