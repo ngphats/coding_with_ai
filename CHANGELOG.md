@@ -2,6 +2,36 @@
 
 Tất cả các thay đổi quan trọng sẽ được ghi lại trong file này.
 
+## [v0.5.2] - 2025-08-14
+
+### Changed
+- **Main Container Width**: Adjusted max-width từ 1200px → 500px cho toàn bộ layout
+- **Table Responsiveness**: Added horizontal scroll support cho tables trong narrow containers
+- **Compact Layout**: All content now fits trong 500px wide layout
+
+### Technical Details
+- **CSS Update**: .container max-width property updated to 500px
+- **Table Enhancement**: Added overflow-x: auto và min-width: 600px cho tables
+- **Responsive Design**: Maintains usability across all content types
+- **No Breaking Changes**: All functionality preserved với improved layout
+
+### Related Issues
+- ✅ [Issue #008](docs/issues/008.md) - Main Content Container Width Adjustment
+
+## [v0.5.1] - 2025-08-14
+
+### Changed
+- **Form Container Width**: Adjusted max-width từ 600px → 500px theo UI requirements
+- **Better Form Proportions**: More compact form layout for better visual balance
+
+### Technical Details
+- **CSS Update**: .form-container max-width property updated
+- **Responsive**: Maintains responsive behavior across all screen sizes
+- **No Breaking Changes**: All existing functionality preserved
+
+### Related Issues
+- ✅ [Issue #007](docs/issues/007.md) - Form Container Max-Width Adjustment
+
 ## [v0.5.0] - 2025-08-14
 
 ### Added

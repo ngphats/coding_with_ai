@@ -55,6 +55,7 @@
 - **Font Family**: Segoe UI, system font stack
 - **Button Styles**: Modern button system với hover/focus states
 - **Form Styles**: Enhanced input design với transitions
+- **Layout Width**: ✅ 500px max-width for main content container (implemented)
 
 ## Component Standards
 - **Buttons**: Size variations, states, colors

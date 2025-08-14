@@ -276,7 +276,7 @@ switch ($action) {
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 500px;
             margin: 0 auto;
         }
 
@@ -341,12 +341,13 @@ switch ($action) {
             background: white;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow-lg);
-            overflow: hidden;
+            overflow-x: auto;
             margin-bottom: 2rem;
         }
 
         table {
             width: 100%;
+            min-width: 600px;
             border-collapse: collapse;
         }
 
@@ -393,7 +394,7 @@ switch ($action) {
             padding: 2rem;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow-lg);
-            max-width: 600px;
+            max-width: 500px;
             margin: 0 auto 2rem auto;
         }
 
