@@ -1,7 +1,11 @@
 # User Management System
 
 ## Mô tả dự án
-Hệ thống quản lý người dùng đơn giản sử dụng PHP và PostgreSQL. Dự án được thiết kế để dễ dàng mở rộng và tương tác với AI.
+Hệ thống## 📈 Current Status (2025-08-14)
+- **Development**: Edit User functionality in progress
+- **Active Issues**: [Issue #005](docs/issues/005.md) - Edit User functionality  
+- **Next Milestone**: Complete CRUD operations
+- **Documentation**: Up-to-date lý người dùng đơn giản sử dụng PHP và PostgreSQL. Dự án được thiết kế để dễ dàng mở rộng và tương tác với AI.
 
 ## Công nghệ sử dụng
 - **Backend**: PHP 8.0+
@@ -64,3 +68,4 @@ users/
 - Setup docs-first workflow
 - **Current Version**: v0.3.0 (Add User feature completed)
 - **Clean state**: All planned features implemented
+# coding_with_ai
