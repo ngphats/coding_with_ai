@@ -2,6 +2,34 @@
 
 Tất cả các thay đổi quan trọng sẽ được ghi lại trong file này.
 
+## [v0.3.0] - 2025-08-14
+
+### Added
+- Add User functionality với complete form
+- Form validation (server-side và client-side)
+- Success/error feedback system
+- Duplicate email detection
+- Routing system với ?action parameter
+- "Thêm User" button trên main page
+- Professional form styling và responsive design
+
+### Changed
+- **Major rewrite**: index.php từ simple display → full CRUD application
+- Added helper functions: validateUserInput(), createUser(), getUsers()
+- Improved architecture với proper routing và separation of concerns
+- Enhanced CSS styling cho forms và buttons
+- Better error handling và user experience
+
+### Technical Details
+- **Routing**: `?action=list` (default), `?action=add`
+- **Validation**: Required fields, email format, character limits, regex patterns
+- **Database**: INSERT với prepared statements và duplicate checking
+- **Security**: Input sanitization, SQL injection prevention, XSS protection
+- **UX**: Form persistence on errors, clear success/error messages
+
+### Related Issues
+- ✅ Closes #004: Add User Creation Functionality
+
 ## [v0.2.1] - 2025-08-13
 
 ### Added

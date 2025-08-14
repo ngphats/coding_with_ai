@@ -30,18 +30,19 @@ INSERT INTO users (first_name, last_name, email, phone) VALUES
 $pdo = new PDO("pgsql:host=localhost;dbname=user_management", $username, $password);
 ```
 
-## Query to Use
+## Insert New User
 ```sql
-SELECT id, first_name, last_name, email, phone, created_at FROM users ORDER BY id;
+INSERT INTO users (first_name, last_name, email, phone) 
+VALUES (?, ?, ?, ?);
 ```
 
-## Migration for Existing Database
-```sql
--- Add phone column to existing table
-ALTER TABLE users ADD COLUMN phone VARCHAR(20);
+## Validation Constraints
+- **first_name**: NOT NULL, VARCHAR(50)
+- **last_name**: NOT NULL, VARCHAR(50)  
+- **email**: NOT NULL, UNIQUE, VARCHAR(100)
+- **phone**: NULLABLE, VARCHAR(20)
 
--- Update existing users with sample phone numbers
-UPDATE users SET phone = '0901234567' WHERE id = 1;
-UPDATE users SET phone = '0902345678' WHERE id = 2;
-UPDATE users SET phone = '0903456789' WHERE id = 3;
-```
+## Error Handling
+- **Duplicate Email**: Check for UNIQUE constraint violation
+- **Required Fields**: Validate NOT NULL constraints
+- **Length Limits**: Validate VARCHAR length limits

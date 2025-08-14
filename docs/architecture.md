@@ -1,37 +1,82 @@
-# Code Structure - Simple
+# Code Structure - With Add User Feature
 
 ## File: index.php (Everything in one file)
 
+### 1. Configuration & Connection
 ```php
 <?php
-// 1. Database connection
-$pdo = new PDO("pgsql:host=localhost;dbname=user_management", $username, $password);
-
-// 2. Get users
-$users = $pdo->query("SELECT id, first_name, last_name, email, phone, created_at FROM users")->fetchAll();
-
-// 3. HTML output
-?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>User Management</title>
-    <style>/* Table CSS */</style>
-</head>
-<body>
-    <h1>User Management System</h1>
-    <table>
-        <!-- Display users here -->
-    </table>
-</body>
-</html>
+// Database configuration
+// PDO connection setup
+// Error handling
 ```
 
-## That's the entire architecture
-- No functions needed
-- No classes needed  
-- No routing needed
-- Linear execution: connect → query → display
+### 2. Helper Functions
+```php
+function validateUserInput($data) {
+    // Validate form input
+    // Return array of errors
+}
+
+function createUser($firstName, $lastName, $email, $phone = null) {
+    // INSERT new user into database
+    // Return success/failure
+}
+
+function getUsers() {
+    // Existing SELECT functionality
+}
+```
+
+### 3. Request Routing
+```php
+$action = $_GET['action'] ?? 'list';
+
+switch ($action) {
+    case 'list':
+        // Display user table (existing functionality)
+        break;
+    case 'add':
+        if ($_POST) {
+            // Process form submission
+            // Validate input
+            // Create user
+            // Redirect with message
+        } else {
+            // Show add user form
+        }
+        break;
+    default:
+        // Default to list
+}
+```
+
+### 4. HTML Templates
+```php
+function renderUserList($users) {
+    // Existing table + "Thêm User" button
+}
+
+function renderAddUserForm($errors = []) {
+    // Form HTML với validation errors
+}
+
+function renderSuccessMessage($message) {
+    // Success feedback display
+}
+```
+
+### 5. CSS Styling
+```css
+/* Existing table styles */
+/* New form styles */
+/* Button styles */
+/* Error message styles */
+```
+
+## Page Flow
+1. **Main Page** (`?action=list`): User table + Add button
+2. **Add Page** (`?action=add`): Form to create user
+3. **Form Submit**: Validate → Create → Redirect with message
 
 ## Design Patterns
 - **Single Responsibility**: Mỗi function có 1 nhiệm vụ cụ thể
