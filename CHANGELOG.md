@@ -2,6 +2,64 @@
 
 Tất cả các thay đổi quan trọng sẽ được ghi lại trong file này.
 
+## [v0.5.0] - 2025-08-14
+
+### Added
+- **Modern Design System** với CSS Variables
+- **Enhanced UI/UX** với professional styling
+- **Responsive Design** với mobile-first approach
+- **Interactive Elements** với hover/focus states
+- **Improved Typography** với system font stack
+- **Better Form Styling** với enhanced validation display
+- **Table Enhancements** với hover effects và better structure
+- **Color System** với semantic color variables
+
+### Changed
+- **Complete CSS Overhaul**: Modern design system replacing basic styles
+- **Enhanced Button System**: Multiple variants với proper states
+- **Improved Table Design**: Better spacing, shadows, và interactions
+- **Form Improvements**: Better input design với focus states
+- **Mobile Responsiveness**: Optimized cho all device sizes
+- **Visual Hierarchy**: Better typography scale và spacing
+
+### Technical Details
+- **CSS Variables**: Centralized design tokens
+- **Modern CSS**: Flexbox, Grid, và advanced selectors
+- **Responsive Breakpoints**: 768px, 480px breakpoints
+- **Performance**: Optimized CSS với efficient selectors
+- **Accessibility**: Better color contrast và focus states
+- **Cross-browser**: Modern browser support
+
+### Related Issues
+- ✅ [Issue #006](docs/issues/006.md) - UI/UX Improvements (Phase 1)
+
+## [v0.4.0] - 2025-08-14
+
+### Added
+- Edit User functionality với pre-populated form
+- getUserById() function for individual user retrieval
+- updateUser() function với duplicate email checking (excluding current user)
+- "Edit" action links trong user table
+- Actions column trong user table
+- Edit form với proper validation và error handling
+
+### Changed
+- Enhanced routing system: added `?action=edit&id={user_id}` route
+- User table now includes Actions column với Edit links
+- Improved CSS với .btn-sm styling for action buttons
+- Better error handling for invalid user IDs và not found cases
+
+### Technical Details
+- **New Routes**: `?action=edit&id={user_id}`
+- **New Functions**: `getUserById($pdo, $id)`, `updateUser($pdo, $id, ...)`
+- **Validation**: Same rules như Add User, plus duplicate email check excluding current user
+- **Database**: UPDATE statements với WHERE clause và prepared statements
+- **Security**: ID validation, user existence checking, SQL injection prevention
+- **UX**: Pre-populated forms, consistent styling, proper redirects
+
+### Related Issues
+- ✅ [Issue #005](docs/issues/005.md) - Edit User functionality
+
 ## [v0.3.0] - 2025-08-14
 
 ### Added
