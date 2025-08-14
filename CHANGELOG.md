@@ -2,6 +2,43 @@
 
 Tất cả các thay đổi quan trọng sẽ được ghi lại trong file này.
 
+## [v0.6.1] - 2025-08-14
+
+### Changed
+- **Color Scheme**: Updated primary colors từ blue → professional yellow/amber palette
+- **Button Styling**: All buttons now use yellow branding colors
+- **Form Focus States**: Input focus effects updated to yellow theme
+- **Hover Effects**: Interactive elements use consistent yellow color scheme
+- **Brand Identity**: Modern yellow branding throughout application
+
+### Technical Details
+- **CSS Variables**: Updated --primary-color (#2563eb → #f59e0b)
+- **CSS Variables**: Updated --primary-hover (#1d4ed8 → #d97706)
+- **Focus States**: Updated rgba focus box-shadows to match yellow theme
+- **Accessibility**: Maintained color contrast ratios cho readability
+- **No Breaking Changes**: All functionality preserved với new visual identity
+
+### Related Issues
+- ✅ [Issue #010](docs/issues/010.md) - Change Color Scheme to Yellow Palette
+
+## [v0.6.0] - 2025-08-14
+
+### Changed
+- **Wide Layout**: Expanded main container width từ 500px → 1280px
+- **Table Display**: Removed horizontal scroll constraints cho better table viewing
+- **Screen Utilization**: Better use của available screen space on large displays
+- **Professional Appearance**: Enhanced layout cho desktop usage
+
+### Technical Details
+- **CSS Update**: .container max-width expanded to 1280px
+- **Table Enhancement**: Removed overflow-x auto và min-width constraints
+- **Form Balance**: Kept forms at 500px width cho optimal readability
+- **Responsive Design**: Maintains mobile/tablet responsiveness
+- **No Breaking Changes**: All functionality preserved với improved layout
+
+### Related Issues
+- ✅ [Issue #009](docs/issues/009.md) - Expand Layout to 1280px Width
+
 ## [v0.5.2] - 2025-08-14
 
 ### Changed

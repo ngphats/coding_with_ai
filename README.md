@@ -1,9 +1,9 @@
 # User Management System
 
-**Current Version**: v0.5.2 (Compact 500px Layout completed)
+**Current Version**: v0.6.1 (Yellow Color Scheme completed)
 
 ## 📈 Current Status (2025-08-14)
-- **Development**: Compact 500px layout implemented
+- **Development**: Yellow color scheme implemented
 - **Active Issues**: None (clean state)
 - **Next Milestone**: Delete User functionality or advanced features
 - **Documentation**: Up-to-date

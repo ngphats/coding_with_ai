@@ -50,12 +50,12 @@
 - [x] Mobile performance (Responsive design optimized)
 
 ## Design System
-- **Primary Colors**: Modern blue palette (CSS Variables)
+- **Primary Colors**: Modern yellow palette (CSS Variables)
 - **Secondary Colors**: Neutral gray scale
 - **Font Family**: Segoe UI, system font stack
 - **Button Styles**: Modern button system với hover/focus states
 - **Form Styles**: Enhanced input design với transitions
-- **Layout Width**: ✅ 500px max-width for main content container (implemented)
+- **Layout Width**: ✅ 1280px max-width for main content container (implemented)
 
 ## Component Standards
 - **Buttons**: Size variations, states, colors

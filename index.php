@@ -214,8 +214,8 @@ switch ($action) {
     <style>
         /* CSS Variables - Design System */
         :root {
-            --primary-color: #2563eb;
-            --primary-hover: #1d4ed8;
+            --primary-color: #f59e0b;
+            --primary-hover: #d97706;
             --secondary-color: #64748b;
             --secondary-hover: #475569;
             --success-color: #059669;
@@ -276,7 +276,7 @@ switch ($action) {
         }
         
         .container {
-            max-width: 500px;
+            max-width: 1280px;
             margin: 0 auto;
         }
 
@@ -302,7 +302,7 @@ switch ($action) {
         .btn:focus {
             outline: 2px solid transparent;
             outline-offset: 2px;
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
         }
 
         /* Primary Button */
@@ -341,13 +341,12 @@ switch ($action) {
             background: white;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow-lg);
-            overflow-x: auto;
+            overflow: hidden;
             margin-bottom: 2rem;
         }
 
         table {
             width: 100%;
-            min-width: 600px;
             border-collapse: collapse;
         }
 
@@ -424,7 +423,7 @@ switch ($action) {
             outline: none;
             border-color: var(--primary-color);
             background-color: white;
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
         }
 
         input[type="text"]:hover, input[type="email"]:hover {
