@@ -16,7 +16,7 @@ try {
 
 // Query all users from database
 try {
-    $sql = "SELECT id, first_name, last_name, email, created_at FROM users ORDER BY id";
+    $sql = "SELECT id, first_name, last_name, email, phone, created_at FROM users ORDER BY id";
     $stmt = $pdo->query($sql);
     $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
@@ -82,6 +82,8 @@ try {
 </head>
 <body>
     <div class="container">
+        <h1>User Management System</h1>
+        
         <?php if (empty($users)): ?>
             <table>
                 <thead>
@@ -90,12 +92,13 @@ try {
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Email</th>
+                        <th>Phone</th>
                         <th>Created Date</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td colspan="5" class="no-data">No users found</td>
+                        <td colspan="6" class="no-data">No users found</td>
                     </tr>
                 </tbody>
             </table>
@@ -107,6 +110,7 @@ try {
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Email</th>
+                        <th>Phone</th>
                         <th>Created Date</th>
                     </tr>
                 </thead>
@@ -117,6 +121,7 @@ try {
                         <td><?= htmlspecialchars($user['first_name']) ?></td>
                         <td><?= htmlspecialchars($user['last_name']) ?></td>
                         <td><?= htmlspecialchars($user['email']) ?></td>
+                        <td><?= htmlspecialchars($user['phone'] ?? '') ?></td>
                         <td><?= htmlspecialchars(date('d/m/Y H:i', strtotime($user['created_at']))) ?></td>
                     </tr>
                     <?php endforeach; ?>

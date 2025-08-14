@@ -6,7 +6,7 @@
 
 ## 2. User Data Display  
 - Query all users from database
-- Display in HTML table with columns: ID, First Name, Last Name, Email, Created Date
+- Display in HTML table with columns: ID, First Name, Last Name, Email, Phone, Created Date
 - Show "No users found" if table is empty
 
 ## 3. Basic HTML Page

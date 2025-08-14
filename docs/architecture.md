@@ -8,7 +8,7 @@
 $pdo = new PDO("pgsql:host=localhost;dbname=user_management", $username, $password);
 
 // 2. Get users
-$users = $pdo->query("SELECT id, first_name, last_name, email, created_at FROM users")->fetchAll();
+$users = $pdo->query("SELECT id, first_name, last_name, email, phone, created_at FROM users")->fetchAll();
 
 // 3. HTML output
 ?>

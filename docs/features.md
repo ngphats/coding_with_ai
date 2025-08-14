@@ -1,20 +1,22 @@
-# Features - Current Implementation Only
+# Features - Current Implementation
 
-## What We're Building
-**Simple user display page** - Chỉ hiển thị danh sách users từ database
+## What We've Built
+**Simple user display page** - Hiển thị danh sách users từ database
 
-## Features to Implement
-- [ ] Database connection to PostgreSQL
-- [ ] Query users from database  
-- [ ] Display users in HTML table
-- [ ] Basic CSS styling for table
+## Implemented Features
+- [x] Database connection to PostgreSQL
+- [x] Query users from database  
+- [x] Display users in HTML table
+- [x] Basic CSS styling for table
+- [x] Phone number column
 
 ## Table Columns
 - ID
 - First Name  
 - Last Name
 - Email
+- Phone Number
 - Created Date
 
-## That's It!
-Không có gì khác. Đơn giản và tập trung.
+## Current Status
+MVP hoàn thành với tất cả features đã implement successfully.

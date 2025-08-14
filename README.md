@@ -12,11 +12,18 @@ Hệ thống quản lý người dùng đơn giản sử dụng PHP và PostgreS
 ```
 users/
 ├── README.md           # Documentation chính
+├── CHANGELOG.md        # Lịch sử thay đổi
 ├── docs/              # Tài liệu
 │   ├── requirements.md # What we need
 │   ├── architecture.md # Code structure  
 │   ├── database.md     # DB setup
-│   └── features.md     # What we're building
+│   ├── features.md     # What we're building
+│   └── issues/         # Issue management
+│       ├── README.md   # Issues dashboard
+│       ├── 000-template.md # Template for new issues
+│       ├── 001.md      # MVP Implementation ✅
+│       ├── 002.md      # Database Schema ✅
+│       └── 003.md      # Phone Implementation ✅
 └── index.php          # Main file (✅ đã tạo)
 ```
 
@@ -39,13 +46,15 @@ users/
 4. **Testing Phase**: Verify code match với documentation
 
 ## Ghi chú cho AI Context
-- **Chỉ implement READ operation**: Load và display users thôi
+- **MVP hoàn thành**: All planned features implemented
 - **1 file index.php**: Chứa config + connection + query + HTML
-- **No complex features**: Không CRUD, không validation, không responsive
-- **MVP approach**: Simplest possible implementation
-- **Database schema**: Chỉ cần table users với 5 columns cơ bản
+- **Phone number feature**: Added và working
+- **Clean state**: No pending issues, ready for new requirements
+- **Database schema**: Table users với 6 columns (including phone)
 
 ## Cập nhật gần nhất
 - Tạo cấu trúc project cơ bản
 - Thiết lập documentation framework
 - Setup docs-first workflow
+- **v0.2.1**: Phone Number feature completed (2025-08-13)
+- **Clean state**: All planned features implemented
